@@ -61,5 +61,17 @@ function nsgrep --description 'show open ports for $argv'
 end
 
 function randpw --description 'generate a password'
-	tr -dc 'a-zA-Z0-9_@#%&,;()-' < /dev/urandom | head -c32;echo;
+	switch (count $argv)
+
+	case 0
+		tr -dc 'a-zA-Z0-9_@#%&,;()-' < /dev/urandom | head -c32;echo;
+
+	case 1
+		tr -dc 'a-zA-Z0-9_@#%&,;()-' < /dev/urandom | head -c$argv;echo;
+
+	case \*
+		echo "Only none or 1 arguemnt is valid!"
+		return 1
+
+	end
 end
