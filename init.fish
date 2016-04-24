@@ -59,3 +59,7 @@ function nsgrep --description 'show open ports for $argv'
 
 	end
 end
+
+function randpw --description 'generate a password'
+	tr -dc 'a-zA-Z0-9_@#%&,;()-' < /dev/urandom | head -c32;echo;
+end
