@@ -37,7 +37,7 @@ function psgrep --description 'show matching processes for $argv'
 		ps aux | grep $argv | grep -v grep
 
 	case \*
-		echo "Only 1 arguemnt is valid!"
+		echo "Only 1 argument is valid!"
 		return 1
 
 	end
@@ -54,7 +54,7 @@ function nsgrep --description 'show open ports for $argv'
 		netstat -tulpen | grep $1 | grep -v grep
 
 	case \*
-		echo "Only 1 arguemnt is valid!"
+		echo "Only 1 argument is valid!"
 		return 1
 
 	end
@@ -70,7 +70,7 @@ function randpw --description 'generate a password'
 		tr -dc 'a-zA-Z0-9_@#%&,;()-' < /dev/urandom | head -c$argv;echo;
 
 	case \*
-		echo "Only none or 1 arguemnt is valid!"
+		echo "Only none or 1 argument is valid!"
 		return 1
 
 	end
