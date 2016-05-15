@@ -6,7 +6,7 @@ function nsgrep --description 'show open ports for $argv'
 		return 1
 
 	case 1
-		netstat -tulpen | grep $1 | grep -v grep
+		netstat -tulpen | grep $argv | grep -v grep
 
 	case \*
 		echo "Only 1 argument is valid!"
