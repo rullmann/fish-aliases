@@ -1,3 +1,3 @@
-function gitp --description 'git difftool'
+function gitd --description 'git difftool'
     command git difftool
 end
